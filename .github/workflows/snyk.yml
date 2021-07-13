@@ -23,6 +23,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+      - name: Install node.js
+        run: npm install
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
         env:
